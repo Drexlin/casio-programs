@@ -1,4 +1,5 @@
 # encoding=utf-8
+# Stored in %APPDATA%\Notepad++\plugins\Config\PythonScript\scripts
 
 # First we'll start an undo action, then Ctrl-Z will undo the actions of the whole script
 editor.beginUndoAction()
@@ -6,6 +7,7 @@ editor.beginUndoAction()
 editor.replace("·\r\n","\r\n")   # end of line
 editor.replace("»\r\n","_\r\n")  # output command
 editor.replace("‡","->")         # assignment arrow
+editor.replace("î","=>")         # jump command
 
 editor.replace("Ð","r")          # r
 editor.replace("–","o")          # theta

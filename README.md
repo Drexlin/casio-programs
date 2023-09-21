@@ -13,6 +13,7 @@ The following characters get converted (So far. I'm sure more will need to be ad
 | `⏎`             | end of line              | `·`                       | `\r\n`       |
 | `◢`             | output command           | `»`                       | `_\r\n`      |
 | `→`             | assignment               | `‡`                       | `->`         |
+| `⇒`             | jump command             | `î`                       | `=>`         |
 | `r`             | r                        | `Ð`                       | `r`          |
 | `θ`             | theta                    | `–`                       | `o`          |
 | `i`             | i                        | `¸`                       | `i`          |
