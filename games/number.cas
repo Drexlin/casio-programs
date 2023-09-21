@@ -1,0 +1,216 @@
+Filename:NUMBER
+Norm 
+0->Z
+ClrText
+" "
+"    PICK A NUMBER"
+"     VERSION 1.1"
+" "
+"         BY"
+"   BRIAN AFFOURTIT"
+While Z<>31
+Getkey->Z
+WhileEnd
+Lbl L
+ClrText
+"HOW MANY PLAYERS?"
+" "
+"    [1]  OR  [2]    "
+?->G
+If G<>1 And G<>2
+Then Goto L
+IfEnd
+ClrText
+0->D
+0->H~K
+"SELECT SKILL LEVEL:"
+Lbl G
+"[1]BEGINNER  (1-100)"
+"[2]AMATEUR  (1-1000)"
+"[3]EXPERT (1-100000)"
+"[4]MASTER(1-1000000)"
+"[5]VETERAN  (RANDOM)"
+?->A
+ClrText
+If G=1
+Then Goto N
+Else If G=2
+Then 1->H:Goto O
+Lbl N
+If A=1
+Then Goto A
+Else If A=2
+Then Goto B
+Else If A=3
+Then Goto C
+Else If A=4
+Then Goto D
+Else If A=5
+Then Goto M
+Else Goto E
+Lbl O
+If A=1
+Then Goto P
+Else If A=2
+Then Goto Q
+Else If A=3
+Then Goto R
+Else If A=4
+Then Goto S
+Else If A=5
+Then Goto M
+Else Goto E
+Lbl M
+Int 4Ran#+1->A
+If G=1
+Then Goto N
+Else Goto O
+Lbl A
+Int 100Ran#+1->B
+Goto F
+Lbl B
+Int 1000Ran#+1->B
+Goto F
+Lbl C
+Int 100000Ran#+1->B
+Goto F
+Lbl D
+Int 1000000Ran#+1->B
+Goto F
+Lbl P
+ClrText
+If H=1
+Then "PLAYER 1:"
+Else "PLAYER 2:"
+IfEnd
+"PICK A NUMBER BETWEEN 1 AND 100 FOR THE   OTHER PLAYER TO GUESS"?->B
+If B<1 Or B>100
+Then Goto P
+IfEnd
+Int B
+If H=1
+Then 2->H
+Else 1->H
+IfEnd
+Goto T
+Lbl Q
+ClrText
+If H=1
+Then "PLAYER 1:"
+Else "PLAYER 2:"
+IfEnd
+"PICK A NUMBER BETWEEN 1 AND 1000 FOR THE  OTHER PLAYER TO GUESS"?->B
+If B<1 Or B>1000
+Then Goto Q
+IfEnd
+Intg B
+If H=1
+Then 2->H
+Else 1->H
+IfEnd
+Goto T
+Lbl R
+ClrText
+If H=1
+Then "PLAYER 1:"
+Else "PLAYER 2:"
+IfEnd
+"PICK A NUMBER BETWEEN 1 AND 100000 FOR THE OTHER PLAYER TO     GUESS"
+?->B
+If B<1 Or B>100000
+Then Goto R
+IfEnd
+Int B
+If H=1
+Then 2->H
+Else 1->H
+IfEnd
+Goto T
+Lbl S
+ClrText
+If H=1
+Then "PLAYER 1:"
+Else "PLAYER 2:"
+IfEnd
+"PICK A NUMBER BETWEEN 1 AND 1000000 FOR   THE OTHER PLAYER TO  GUESS"
+?->B
+If B<1 Or B>1000000
+Then Goto S
+IfEnd
+Int B
+If H=1
+Then 2->H
+Else 1->H
+IfEnd
+Goto T
+Lbl E
+ClrText
+"TRY AGAIN"
+Goto G
+Lbl T
+ClrText
+If H=1
+Then "PLAYER 1:"
+Else "PLAYER 2:"
+IfEnd
+0->D
+Goto F
+Lbl F
+"PICK A NUMBER"
+?->C
+D+1->D
+If C=B
+Then Goto H
+Else If C>B
+Then Goto I
+Else If C<B
+Then Goto J
+Lbl H
+ClrText
+"GOOD JOB!!!"
+"NUMBER OF TRIES:"
+D_
+If H=0
+Then Goto K
+Else If I=6
+Then Goto Y
+Else I+1->I:Goto X
+IfEnd
+Lbl I
+ClrText
+"LOWER"
+Goto F
+Lbl J
+ClrText
+"HIGHER"
+Goto F
+Lbl X
+If H=1
+Then J+D->J
+Else K+D->K
+IfEnd
+Goto O
+Lbl Y
+ClrText
+"PLAYER 1 SCORE:"
+J_
+"PLAYER 2 SCORE:"
+K_
+ClrText
+If J<K
+Then "PLAYER 1 WINS"
+Goto K
+Else If J>K
+Then "PLAYER 2 WINS"
+Goto K
+Else "TIE"
+IfEnd
+Goto K
+Lbl K
+"WOULD YOU LIKE TO    PLAY AGAIN?"
+"[1] YES"
+"[2] NO"
+?->E
+If E=1
+Then Goto L
+Else ClrText

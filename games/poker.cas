@@ -1,0 +1,477 @@
+Filename:POKER
+Norm 
+0->A~R
+0->T~Z
+ClrText
+" "
+"        POKER"
+"     VERSION 0.5"
+" "
+"         BY"
+"   BRIAN AFFOURTIT"
+While Z=0
+Getkey->Z
+WhileEnd
+ClrText
+ClrGraph
+RclV-Win 6
+CoordOff
+GridOff
+AxesOff
+LabelOff
+Cls
+Text 1,1," "
+0->X
+For 2->X To 85 Step 20
+Plot X,50
+Plot X,90
+Line
+Plot X+15,90
+Line
+Plot X,50
+Line
+Plot X-15,50
+Line
+Next
+Text 1,10,"F1"
+Text 1,35,"F2"
+Text 1,60,"F3"
+Text 1,85,"F4"
+Text 1,110,"F5"
+Text 50,1,"F1-F5 TO HOLD"
+Text 57,1,"F6 TO DEAL"
+Text 50,75,"BANK: "
+Text 57,75,"BET: "
+50->B
+Text 50,98,S
+Text 57,93,B
+Lbl A
+0->A
+0->C~R
+0->T~Z
+Text 37,45,"MAKE BET"
+Text 57,93,B
+Text 57,93,B
+0->Z
+While Z=0
+Getkey->Z
+WhileEnd
+If Z=28
+Then B+50->B
+Text 57,93,"   "
+If B>500
+Then 50->B
+IfEnd
+Goto A
+Else If Z=37
+Then B-50->B
+Text 57,93,"   "
+If B<50
+Then 500->B
+IfEnd
+Goto A
+Else If Z=71
+Then 1000->S
+Text 50,98,"      "
+Text 50,98,S
+Goto A
+Else If Z=29
+Then S-B->S
+Text 37,45,"         "
+Text 50,98,"      "
+Text 50,98,S
+IfEnd
+Lbl C
+Int (Ran#*13)+1->H
+Int (Ran#*4)+1->I
+H->C
+I->D
+1->E
+Lbl B
+If C>=2 And C<=10
+Then Text 13,12+(25*(E-1)),C
+IfEnd
+If C=1
+Then Text 13,12+(25*(E-1)),"A"
+IfEnd
+If C=11
+Then Text 13,12+(25*(E-1)),"J"
+IfEnd
+If C=12
+Then Text 13,12+(25*(E-1)),"Q"
+IfEnd
+If C=13
+Then Text 13,12+(25*(E-1)),"K"
+IfEnd
+Text 1,1," "
+If D=1
+Then Text 20,12+(25*(E-1)),"S"
+IfEnd
+If D=2
+Then Text 20,12+(25*(E-1)),"C"
+IfEnd
+If D=3
+Then Text 20,12+(25*(E-1)),"H"
+IfEnd
+If D=4
+Then Text 20,12+(25*(E-1)),"D"
+IfEnd
+Goto H
+Lbl D
+Int (Ran#*13)+1->J
+Int (Ran#*4)+1->K
+J->C
+K->D
+2->E
+If J=H And K=I
+Then Goto D
+Else Goto B
+IfEnd
+Lbl H
+If E=1
+Then Goto D
+Else If E=2
+Then Goto E
+Else If E=3
+Then Goto F
+Else If E=4
+Then Goto G
+Else If E=5
+Then Goto I
+IfEnd
+Lbl E
+Int (Ran#*13)+1->L
+Int (Ran#*4)+1->M
+L->C
+M->D
+3->E
+If L=H And M=I
+Then Goto E
+Else If L=J And M=K
+Then Goto E
+Else Goto B
+IfEnd
+Lbl F
+Int (Ran#*13)+1->N
+Int (Ran#*4)+1->O
+N->C
+O->D
+4->E
+If N=H And O=I
+Then Goto F
+Else If N=J And O=K
+Then Goto F
+Else If N=L And O=M
+Then Goto F
+Else Goto B
+IfEnd
+Lbl G
+Int (Ran#*13)+1->P
+Int (Ran#*4)+1->Q
+P->C
+Q->D
+5->E
+If P=H And Q=I
+Then Goto G
+Else If P=J And Q=K
+Then Goto G
+Else If P=L And Q=M
+Then Goto G
+Else If P=N And Q=O
+Then Goto G
+Else Goto B
+IfEnd
+Lbl I
+Text 1,1," "
+Text 42,25,"SELECT CARDS TO HOLD"
+Text 1,1," "
+0->Z
+While Z=0
+Getkey->Z
+WhileEnd
+If Z=79 And R=0
+Then Text 35,7,"HELD"
+1->R
+Goto I
+Else If Z=79 And R=1
+Then Text 35,7,"    "
+0->R
+Goto I
+Else If Z=69 And T=0
+Then Text 35,32,"HELD"
+1->T
+Goto I
+Else If Z=69 And T=1
+Then Text 35,32,"    "
+0->T
+Goto I
+Else If Z=59 And U=0
+Then Text 35,57,"HELD"
+1->U
+Goto I
+Else If Z=59 And U=1
+Then Text 35,57,"    "
+0->U
+Goto I
+Else If Z=49 And V=0
+Then Text 35,82,"HELD"
+1->V
+Goto I
+Else If Z=49 And V=1
+Then Text 35,82,"    "
+0->V
+Goto I
+Else If Z=39 And W=0
+Then Text 35,107,"HELD"
+1->W
+Goto I
+Else If Z=39 And W=1
+Then Text 35,107,"    "
+0->W
+Goto I
+Else If Z=29
+Then Text 42,25,"                     "
+Goto J
+IfEnd
+Lbl J
+If R=0
+Then Goto K
+IfEnd
+Lbl P
+If T=0
+Then Goto L
+IfEnd
+Lbl Q
+If U=0
+Then Goto M
+IfEnd
+Lbl R
+If V=0
+Then Goto N
+IfEnd
+Lbl S
+If W=0
+Then Goto O
+IfEnd
+If W=1
+Then Goto U
+Lbl K
+Int (Ran#*13)+1->H
+Int (Ran#*4)+1->I
+If (H=J And I=K) Or (H=L And I=M) Or (H=N And I=O) Or (H=P And I=Q)
+Then Goto K
+Else H->C
+I->D
+1->E
+Goto T
+IfEnd
+Lbl L
+Int (Ran#*13)+1->J
+Int (Ran#*4)+1->K
+If (J=H And K=I) Or (J=L And K=M) Or (J=N And K=O) Or (J=P And K=Q)
+Then Goto L
+Else J->C
+K->D
+2->E
+Goto T
+Lbl M
+Int (Ran#*13)+1->L
+Int (Ran#*4)+1->M
+If (L=H And M=I) Or (L=J And M=K) Or (L=N And M=O) Or (L=P And M=Q)
+Then Goto M
+Else L->C
+M->D
+3->E
+Goto T
+Lbl N
+Int (Ran#*13)+1->N
+Int (Ran#*4)+1->O
+If (N=H And O=I) Or (N=J And O=K) Or (N=L And O=M) Or (N=P And O=Q)
+Then Goto N
+Else N->C
+O->D
+4->E
+Goto T
+Lbl O
+Int (Ran#*13)+1->P
+Int (Ran#*4)+1->Q
+If (P=H And Q=I) Or (P=J And Q=K) Or (P=L And Q=M) Or (P=N And Q=O)
+Then Goto O
+Else P->C
+Q->D
+5->E
+Goto T
+Lbl T
+Text 13,12+(25*(E-1)),"  "
+If C>=2 And C<=10
+Then Text 13,12+(25*(E-1)),C
+IfEnd
+If C=1
+Then Text 13,12+(25*(E-1)),"A"
+IfEnd
+If C=11
+Then Text 13,12+(25*(E-1)),"J"
+IfEnd
+If C=12
+Then Text 13,12+(25*(E-1)),"Q"
+IfEnd
+If C=13
+Then Text 13,12+(25*(E-1)),"K"
+IfEnd
+If D=1
+Then Text 20,12+(25*(E-1)),"S"
+IfEnd
+If D=2
+Then Text 20,12+(25*(E-1)),"C"
+IfEnd
+If D=3
+Then Text 20,12+(25*(E-1)),"H"
+IfEnd
+If D=4
+Then Text 20,12+(25*(E-1)),"D"
+IfEnd
+If E=1
+Then Goto P
+Else If E=2
+Then Goto Q
+Else If E=3
+Then Goto R
+Else If E=4
+Then Goto S
+Else If E=5
+Then Goto U
+IfEnd
+Lbl U
+0->Y
+If (I=K) And (K=M) And (M=O) And (O=Q)
+Then Goto V
+Else Goto W
+Lbl V
+If (H=10 Or J=10 Or L=10 Or N=10 Or P=10) And (H=11 Or J=11 Or L=11 Or N=11 Or P=11) And (H=12 Or J=12 Or L=12 Or N=12 Or P=12) And (H=13 Or J=13 Or L=13 Or N=13 Or P=13) And (H=1 Or J=1 Or L=1 Or N=1 Or P=1)
+Then 1->Y
+Goto X
+IfEnd
+0->o
+14->r
+If H<r
+Then H->r
+IfEnd
+If J<r
+Then J->r
+IfEnd
+If L<r
+Then L->r
+IfEnd
+If N<r
+Then N->r
+IfEnd
+If P<r
+Then P->r
+IfEnd
+If H>o
+Then H->o
+IfEnd
+If J>o
+Then J->o
+IfEnd
+If L>o
+Then L->o
+IfEnd
+If N>o
+Then N->o
+IfEnd
+If P>o
+Then P->o
+IfEnd
+If H<>J And H<>L And H<>N And H<>P And J<>L And J<>N And J<>P And L<>N And L<>P And N<>P And (o-r)=4
+Then 2->Y
+Goto X
+IfEnd
+3->Y
+Goto X
+Lbl W
+14->r
+0->o
+If H>o
+Then H->o
+IfEnd
+If J>o
+Then J->o
+IfEnd
+If L>o
+Then L->o
+IfEnd
+If N>o
+Then N->o
+IfEnd
+If P>o
+Then P->o
+IfEnd
+If H<r
+Then H->r
+IfEnd
+If J<r
+Then J->r
+IfEnd
+If L<r
+Then L->r
+IfEnd
+If N<r
+Then N->r
+IfEnd
+If P<r
+Then P->r
+IfEnd
+If (H=J And J=L And L=N) Or (H=J And J=L And L=P) Or (H=J And J=N And N=P) Or (H=L And L=N And N=P) Or (J=L And L=N And N=P)
+Then 4->Y
+Goto X
+IfEnd
+If (H=J And L=N And N=P) Or (H=L And J=N And N=P) Or (H=N And J=L And L=P) Or (H=P And J=L And L=N) Or (J=L And H=N And N=P) Or (J=N And H=L And L=P) Or (J=P And H=L And L=N) Or (L=N And H=J And J=P) Or (L=P And H=J And J=N) Or (N=P And H=J And J=L)
+Then 5->Y
+Goto X
+IfEnd
+If H<>J And H<>L And H<>N And H<>P And J<>L And J<>N And J<>P And L<>N And L<>P And N<>P And (o-r)=4
+Then 6->Y
+Goto X
+IfEnd
+If (H=J And J=L) Or (H=J And J=N) Or (H=J And J=P) Or (H=L And L=N) Or (H=L And L=P) Or (H=N And N=P) Or (J=L And L=N) Or (J=L And L=P) Or (J=N And N=P) Or (L=N And N=P)
+Then 7->Y
+Goto X
+IfEnd
+Lbl X
+If Y=1
+Then (1000*B)+S->S
+Else If Y=2
+Then (10*B)+S->S
+Else If Y=3
+Then (6*B)+S->S
+Else If Y=4
+Then (8*B)+S->S
+Else If Y=5
+Then (5*B)+S->S
+Else If Y=6
+Then (4*B)+S->S
+Else If Y=7
+Then (2*B)+S->S
+IfEnd
+Text 1,1," "
+If Y<1 Or Y>8
+Then Text 42,40,"YOU LOSE"
+Text 1,1," "
+Goto Y
+Else If Y>=1 And Y<=8
+Then Text 42,40,"YOU WIN"
+IfEnd
+Text 1,1," "
+Lbl Y
+0->Z
+While Z<>29
+Getkey->Z
+WhileEnd
+Text 42,40,"        "
+For 1->E To 5 Step 1
+Text 13,12+(25*(E-1)),"  "
+Text 20,12+(25*(E-1))," "
+Text 35,7+(25*(E-1)),"    "
+Next
+Goto A
