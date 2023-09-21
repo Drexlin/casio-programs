@@ -26,7 +26,7 @@ The following characters get converted (So far. I'm sure more will need to be ad
 So when editing programs with Notepad++, use the substituted characters. Then before transferring to the calculator, run the npp2cb script to convert back.
 
 ## Resources
-*[Casio FA-124](https://edu.casio.com/forteachers/er/software/)
-*[Casio CFX-9850G Manual](https://support.casio.com/en/manual/manualfile.php?cid=004008001)
-*[Notepad++](https://notepad-plus-plus.org/downloads/)
-*[Python Script Plugin](https://npppythonscript.sourceforge.net/)  <--- You can just install this through the Plugins Admin in Notepad++. No need to download it manually.
+* [Casio FA-124](https://edu.casio.com/forteachers/er/software/)
+* [Casio CFX-9850G Manual](https://support.casio.com/en/manual/manualfile.php?cid=004008001)
+* [Notepad++](https://notepad-plus-plus.org/downloads/)
+* [Python Script Plugin](https://npppythonscript.sourceforge.net/)  <--- You can just install this through the Plugins Admin in Notepad++. No need to download it manually.
