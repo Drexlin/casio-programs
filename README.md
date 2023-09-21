@@ -10,7 +10,7 @@ The following characters get converted (So far. I'm sure more will need to be ad
 
 | Casio Character | Description              | How it's displayed in Npp | Substitution |
 | :-------------: | -----------              | :-----------------------: | :----------: |
-| `⏎`             | end of line              | `·`                       | `\r\n`       |
+| `↵`             | end of line              | `·`                       | `\r\n`       |
 | `◢`             | output command           | `»`                       | `_\r\n`      |
 | `→`             | assignment               | `‡`                       | `->`         |
 | `⇒`             | jump command             | `î`                       | `=>`         |
