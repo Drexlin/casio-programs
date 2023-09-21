@@ -3,21 +3,21 @@
 # First we'll start an undo action, then Ctrl-Z will undo the actions of the whole script
 editor.beginUndoAction()
 
-editor.replace(u"·\r\n","\r\n")   # end of line
-editor.replace(u"»\r\n","_\r\n")  # output command
-editor.replace(u"‡","->")         # assignment arrow
+editor.replace("·\r\n","\r\n")   # end of line
+editor.replace("»\r\n","_\r\n")  # output command
+editor.replace("‡","->")         # assignment arrow
 
-editor.replace(u"Ð","r")          # r
-editor.replace(u"–","o")          # theta
-editor.replace(u"¸","i")          # i
+editor.replace("Ð","r")          # r
+editor.replace("–","o")          # theta
+editor.replace("¸","i")          # i
 
-editor.replace(u"¯",">=")         # greater than or equal to
-editor.replace(u"®","<=")         # less than or equal to
-editor.replace(u"¬","<>")         # not equal
+editor.replace("¯",">=")         # greater than or equal to
+editor.replace("®","<=")         # less than or equal to
+editor.replace("¬","<>")         # not equal
 
-editor.replace(u"£","*")          # multiplication
-editor.replace(u"¤","/")          # division
-editor.replace(u"ƒ","!")          # factorial
+editor.replace("£","*")          # multiplication
+editor.replace("¤","/")          # division
+editor.replace("ƒ","!")          # factorial
 
 # End the undo action, so Ctrl-Z will undo the above actions
 editor.endUndoAction()
